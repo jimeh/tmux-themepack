@@ -14,12 +14,6 @@ A pack of various themes for Tmux.
         source-file "${HOME}/.tmux-themepack/powerline/block/green.tmuxtheme"
 
 
-## Tips
-
-- Use different themes/colors on different machines by using some sort of
-  wrapper around launching Tmux.
-
-
 ## Previews
 
 ### Basic Themes
@@ -139,6 +133,23 @@ the left side.
 **Powerline Double Yellow:**
 
 ![powerline-double-yellow](https://raw.github.com/jimeh/tmux-themepack-previews/master/powerline/double/yellow-preview.png)
+
+
+## Tips
+
+- Use different themes/colors on different machines by using some sort of
+  wrapper around launching Tmux.
+
+
+## Contributing
+
+If you decide to contribute your own tmux themes, please try to base it on the
+`default.tmuxtheme` theme. This ensures that switching between themes works as
+it should a completely overwrites all settings from previous themes.
+
+If it's not possible to base your theme on my default one, something is
+probably missing from it. So please contribute a fix to the default theme too
+in that case :)
 
 
 ## License
