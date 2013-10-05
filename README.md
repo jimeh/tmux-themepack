@@ -145,7 +145,7 @@ the left side.
 
 If you decide to contribute your own tmux themes, please try to base it on the
 `default.tmuxtheme` theme. This ensures that switching between themes works as
-it should a completely overwrites all settings from previous themes.
+it should and completely overwrites all settings from previous themes.
 
 If it's not possible to base your theme on my default one, something is
 probably missing from it. So please contribute a fix to the default theme too
