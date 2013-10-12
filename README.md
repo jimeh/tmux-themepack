@@ -14,7 +14,7 @@ A pack of various themes for Tmux.
         source-file "${HOME}/.tmux-themepack/powerline/block/green.tmuxtheme"
 
 
-## Previews
+## Themes
 
 ### Basic Themes
 
@@ -28,10 +28,17 @@ A pack of various themes for Tmux.
 
 ### Powerline Themes
 
-Inspired by the [Powerline](https://github.com/Lokaltog/powerline) VIM plugin,
+Inspired by the [Powerline][] VIM plugin,
 and requires the use of a powerline compatible font in your terminal. You can
 find a number of such fonts in the
-[powerline-fonts](https://github.com/Lokaltog/powerline-fonts) project.
+[powerline-fonts][] project.
+
+If your preferred font isn't available there, please refer to Powerline's
+documentation on [Font Patching][] to patch the font yourself.
+
+[powerline]: https://github.com/Lokaltog/powerline
+[powerline-fonts]: https://github.com/Lokaltog/powerline-fonts
+[font patching]: https://powerline.readthedocs.org/en/latest/fontpatching.html#font-patching
 
 **Powerline Blue:**
 
