@@ -3,7 +3,7 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 theme_option="@themepack"
-defalut_theme='block/blue'
+default_theme='block/blue'
 
 get_tmux_option() {
 	local option="$1"
