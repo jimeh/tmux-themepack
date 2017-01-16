@@ -28,7 +28,7 @@ You can pick and choose a theme via `.tmux.conf` option:
 - `set -g @themepack 'block/blue'` (default)
 - `set -g @themepack 'block/cyan'`
 - `set -g @themepack 'default/gray'`
-- `set -g @themepack 'double/megenta'`
+- `set -g @themepack 'double/magenta'`
 - `...`
 
 ## Themes
