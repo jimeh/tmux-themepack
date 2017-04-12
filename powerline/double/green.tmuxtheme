@@ -36,7 +36,7 @@ set -g window-status-current-bg colour100
 set -g window-status-current-fg colour235
 
 # Window with activity status
-set -g window-status-activity-bg colour107 # fg and bg are flipped here due to
+set -g window-status-activity-bg colour245 # fg and bg are flipped here due to
 set -g window-status-activity-fg colour233 # a bug in tmux
 
 # Window separator

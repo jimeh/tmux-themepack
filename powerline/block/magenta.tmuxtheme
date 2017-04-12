@@ -32,7 +32,7 @@ set -g window-status-format " #I:#W#F "
 set -g window-status-current-format " #I:#W#F "
 
 # Current window status
-set -g window-status-current-bg colour89
+set -g window-status-current-bg colour90
 set -g window-status-current-fg colour232
 
 # Window with activity status
@@ -51,18 +51,18 @@ set -g pane-border-fg colour238
 
 # Active pane border
 set -g pane-active-border-bg default
-set -g pane-active-border-fg colour89
+set -g pane-active-border-fg colour90
 
 # Pane number indicator
 set -g display-panes-colour colour233
 set -g display-panes-active-colour colour245
 
 # Clock mode
-set -g clock-mode-colour colour89
+set -g clock-mode-colour colour90
 set -g clock-mode-style 24
 
 # Message
-set -g message-bg colour89
+set -g message-bg colour90
 set -g message-fg black
 
 # Command message
