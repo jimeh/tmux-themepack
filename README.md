@@ -25,10 +25,11 @@ A pack of various themes for Tmux.
 
 You can pick and choose a theme via `.tmux.conf` option:
 
-- `set -g @themepack 'block/blue'` (default)
-- `set -g @themepack 'block/cyan'`
-- `set -g @themepack 'default/gray'`
-- `set -g @themepack 'double/megenta'`
+- `set -g @themepack 'basic'` (default)
+- `set -g @themepack 'powerline/block/blue'`
+- `set -g @themepack 'powerline/block/cyan'`
+- `set -g @themepack 'powerline/default/gray'`
+- `set -g @themepack 'powerline/double/magenta'`
 - `...`
 
 ## Themes
