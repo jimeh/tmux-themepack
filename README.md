@@ -16,7 +16,7 @@ A pack of various themes for Tmux.
         source-file "${HOME}/.tmux-themepack/powerline/block/green.tmuxtheme"
     
     In some linux distributions you might have to remove the quotation marks from the
-    `source-file` command to avooid a `no such file or directory` error:
+    `source-file` command to avoid a `no such file or directory` error:
     
         source-file ${HOME}/.tmux-themepack/powerline/block/green.tmuxtheme
 
