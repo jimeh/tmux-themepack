@@ -22,7 +22,7 @@ set -g window-status-current-format " #I:#W#F "
 set -g window-status-current-style bg=red,fg=black
 
 # Window with activity status
-set -g window-status-activity-style bg=yellow,fg=black # fg and bg are flipped here due to a bug in tmux
+set -g window-status-activity-style bg=black,fg=yellow
 
 # Window separator
 set -g window-status-separator ""
