@@ -10,18 +10,15 @@
 set -g status-interval 15
 
 # Basic status bar colors
-set -g status-bg green
-set -g status-fg black
+set -g status-style bg=green,fg=black
 
 # Left side of status bar
-set -g status-left-bg green
-set -g status-left-fg black
+set -g status-left-style bg=green,fg=black
 set -g status-left-length 10
 set -g status-left "[#S]"
 
 # Right side of status bar
-set -g status-right-bg green
-set -g status-right-fg black
+set -g status-right-style bg=green,fg=black
 set -g status-right-length 40
 set -g status-right "\"#H\" %H:%M %d-%b-%y"
 
@@ -30,12 +27,10 @@ set -g window-status-format "#I:#W#F"
 set -g window-status-current-format "#I:#W#F"
 
 # Current window status
-set -g window-status-current-bg green
-set -g window-status-current-fg black
+set -g window-status-current-style bg=green,fg=black
 
 # Window with activity status
-set -g window-status-activity-bg green # fg and bg are flipped here due to a
-set -g window-status-activity-fg black # bug in tmux
+set -g window-status-activity-style bg=black,fg=green
 
 # Window separator
 set -g window-status-separator " "
@@ -44,12 +39,10 @@ set -g window-status-separator " "
 set -g status-justify left
 
 # Pane border
-set -g pane-border-bg default
-set -g pane-border-fg white
+set -g pane-border-style bg=default,fg=white
 
 # Active pane border
-set -g pane-active-border-bg default
-set -g pane-active-border-fg green
+set -g pane-active-border-style bg=default,fg=green
 
 # Pane number indicator
 set -g display-panes-colour blue
@@ -60,13 +53,10 @@ set -g clock-mode-colour blue
 set -g clock-mode-style 24
 
 # Message
-set -g message-bg yellow
-set -g message-fg black
+set -g message-style bg=yellow,fg=black
 
 # Command message
-set -g message-command-bg green
-set -g message-command-fg black
+set -g message-command-style bg=green,fg=black
 
 # Mode
-set -g mode-bg yellow
-set -g mode-fg black
+set -g mode-style bg=yellow,fg=black
