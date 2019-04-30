@@ -58,8 +58,9 @@ func TestPowerlineDoubleThemes(t *testing.T) {
 	for _, tt := range tests {
 		tmuxSetup()
 
-		_, err := tm.Exec("source-file", tt.filename)
-		assert.NoErrorf(t, err, `%s: Failed to load theme`, tt.filename)
+		out, err := tm.Exec("source-file", tt.filename)
+		assert.NoErrorf(t, err,
+			`%s: Failed to load theme: %s`, tt.filename, out)
 
 		tmuxHasOptions(t, tt.filename, tmux.GlobalWindow, tmux.Options{
 			"clock-mode-colour":            tt.color1,
@@ -69,7 +70,7 @@ func TestPowerlineDoubleThemes(t *testing.T) {
 			"pane-border-style":            "fg=colour238",
 			"window-status-activity-style": "fg=colour245,bg=colour233",
 			"window-status-current-format": "#[fg=colour233,bg=black]\ue0b0#[fg=" + tt.color2 + ",nobold] #I:#W#F #[fg=colour233,bg=black,nobold]\ue0b2",
-			"window-status-current-style":  "fg=colour235,bg=colour100",
+			"window-status-current-style":  "fg=" + tt.color2 + ",bg=black",
 			"window-status-format":         "  #I:#W#F  ",
 			"window-status-separator":      "",
 		})

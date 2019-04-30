@@ -1,0 +1,9 @@
+#
+# Powerline Purple - Tmux Themepack
+#= include "powerline/_info"
+
+#= include "powerline/_formats"
+
+# Powerline color options
+#= include "powerline/_colors/purple"
+#= include "powerline/default/_base"

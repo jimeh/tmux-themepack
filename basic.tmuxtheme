@@ -1,54 +1,73 @@
-# Status update interval
-set -g status-interval 1
+#
+# Basic theme
+#
 
-# Basic status bar colors
-set -g status-style bg=black,fg=cyan
+# Themepack format options
+set -goq @themepack-status-left-area-left-format "#S"
+set -goq @themepack-status-left-area-middle-format "#I"
+set -goq @themepack-status-left-area-right-format "#P"
+set -goq @themepack-status-right-area-left-format "#H"
+set -goq @themepack-status-right-area-middle-format "%H:%M:%S"
+set -goq @themepack-status-right-area-right-format "%d-%b-%y"
+set -goq @themepack-window-status-current-format "#I:#W#F"
+set -goq @themepack-window-status-format "#I:#W#F"
 
-# Left side of status bar
-set -g status-left-style bg=black,fg=green
-set -g status-left-length 40
-set -g status-left "#S #[fg=white]» #[fg=yellow]#I #[fg=cyan]#P"
+# Theme options
+set -goq  @theme-clock-mode-colour red
+set -goq  @theme-clock-mode-style 24
+set -goq  @theme-display-panes-active-colour default
+set -goq  @theme-display-panes-colour default
+set -goq  @theme-message-bg default
+set -goq  @theme-message-command-bg default
+set -goq  @theme-message-command-fg default
+set -goq  @theme-message-fg default
+set -goq  @theme-mode-bg red
+set -goq  @theme-mode-fg default
+set -goq  @theme-pane-active-border-bg default
+set -goq  @theme-pane-active-border-fg green
+set -goq  @theme-pane-border-bg default
+set -goq  @theme-pane-border-fg default
+set -goq  @theme-status-bg black
+set -goq  @theme-status-fg cyan
+set -goq  @theme-status-interval 1
+set -goq  @theme-status-justify centre
+set -goqF @theme-status-left "#{@themepack-status-left-area-left-format} #[fg=white]» #[fg=yellow]#{@themepack-status-left-area-middle-format} #[fg=cyan]#{@themepack-status-left-area-right-format}"
+set -goq  @theme-status-left-bg black
+set -goq  @theme-status-left-fg green
+set -goq  @theme-status-left-length 40
+set -goqF @theme-status-right "#{@themepack-status-right-area-left-format} #[fg=white]« #[fg=yellow]#{@themepack-status-right-area-middle-format} #[fg=green]#{@themepack-status-right-area-right-format}"
+set -goq  @theme-status-right-bg black
+set -goq  @theme-status-right-fg cyan
+set -goq  @theme-status-right-length 40
+set -goq  @theme-window-status-activity-bg black
+set -goq  @theme-window-status-activity-fg yellow
+set -goq  @theme-window-status-current-bg red
+set -goq  @theme-window-status-current-fg black
+set -goqF @theme-window-status-current-format " #{@themepack-window-status-current-format} "
+set -goqF @theme-window-status-format " #{@themepack-window-status-format} "
+set -goq  @theme-window-status-separator ""
 
-# Right side of status bar
-set -g status-right-style bg=black,fg=cyan
-set -g status-right-length 40
-set -g status-right "#H #[fg=white]« #[fg=yellow]%H:%M:%S #[fg=green]%d-%b-%y"
-
-# Window status
-set -g window-status-format " #I:#W#F "
-set -g window-status-current-format " #I:#W#F "
-
-# Current window status
-set -g window-status-current-style bg=red,fg=black
-
-# Window with activity status
-set -g window-status-activity-style bg=black,fg=yellow
-
-# Window separator
-set -g window-status-separator ""
-
-# Window status alignment
-set -g status-justify centre
-
-# Pane border
-set -g pane-border-style bg=default,fg=default
-
-# Active pane border
-set -g pane-active-border-style bg=default,fg=green
-
-# Pane number indicator
-set -g display-panes-colour default
-set -g display-panes-active-colour default
-
-# Clock mode
-set -g clock-mode-colour red
-set -g clock-mode-style 24
-
-# Message
-set -g message-style bg=default,fg=default
-
-# Command message
-set -g message-command-style bg=default,fg=default
-
-# Mode
-set -g mode-style bg=red,fg=default
+# Apply theme options
+set -gF display-panes-active-colour "#{@theme-display-panes-active-colour}"
+set -gF display-panes-colour "#{@theme-display-panes-colour}"
+set -gF message-command-style "fg=#{@theme-message-command-fg},bg=#{@theme-message-command-bg}"
+set -gF message-style "fg=#{@theme-message-fg},bg=#{@theme-message-bg}"
+set -gF status-interval "#{@theme-status-interval}"
+set -gF status-justify "#{@theme-status-justify}"
+set -gF status-left "#{@theme-status-left}"
+set -gF status-left-length "#{@theme-status-left-length}"
+set -gF status-left-style "fg=#{@theme-status-left-fg},bg=#{@theme-status-left-bg}"
+set -gF status-right "#{@theme-status-right}"
+set -gF status-right-length "#{@theme-status-right-length}"
+set -gF status-right-style "fg=#{@theme-status-right-fg},bg=#{@theme-status-right-bg}"
+set -gF status-style "fg=#{@theme-status-fg},bg=#{@theme-status-bg}"
+set -gwF clock-mode-colour "#{@theme-clock-mode-colour}"
+set -gwF clock-mode-style "#{@theme-clock-mode-style}"
+set -gwF mode-style "fg=#{@theme-mode-fg},bg=#{@theme-mode-bg}"
+set -gwF pane-active-border-style "fg=#{@theme-pane-active-border-fg},bg=#{@theme-pane-active-border-bg}"
+set -gwF pane-border-style "fg=#{@theme-pane-border-fg},bg=#{@theme-pane-border-bg}"
+set -gwF window-status-activity-style "fg=#{@theme-window-status-activity-fg},bg=#{@theme-window-status-activity-bg}"
+set -gwF window-status-current-format "#{@theme-window-status-current-format}"
+set -gwF window-status-current-style "fg=#{@theme-window-status-current-fg},bg=#{@theme-window-status-current-bg}"
+set -gwF window-status-format "#{@theme-window-status-format}"
+set -gwF window-status-separator "#{@theme-window-status-separator}"

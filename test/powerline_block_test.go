@@ -63,8 +63,9 @@ func TestPowerlineBlockThemes(t *testing.T) {
 	for _, tt := range tests {
 		tmuxSetup()
 
-		_, err := tm.Exec("source-file", tt.filename)
-		assert.NoErrorf(t, err, `%s: Failed to load theme`, tt.filename)
+		out, err := tm.Exec("source-file", tt.filename)
+		assert.NoErrorf(t, err,
+			`%s: Failed to load theme: %s`, tt.filename, out)
 
 		tmuxHasOptions(t, tt.filename, tmux.GlobalWindow, tmux.Options{
 			"clock-mode-colour":            tt.color1,

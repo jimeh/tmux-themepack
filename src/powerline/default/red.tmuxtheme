@@ -1,0 +1,9 @@
+#
+# Powerline Red - Tmux Themepack
+#= include "powerline/_info"
+
+#= include "powerline/_formats"
+
+# Powerline color options
+#= include "powerline/_colors/red"
+#= include "powerline/default/_base"

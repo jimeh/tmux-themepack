@@ -1,0 +1,9 @@
+#
+# Powerline Cyan - Tmux Themepack
+#= include "powerline/_info"
+
+#= include "powerline/_formats"
+
+# Powerline color options
+#= include "powerline/_colors/cyan"
+#= include "powerline/default/_base"

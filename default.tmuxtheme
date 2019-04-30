@@ -6,57 +6,62 @@
 # as a template for creating new themes, and as a way to reset a running Tmux
 # server's style to it's defaults.
 
-# Status update interval
-set -g status-interval 15
+# Theme options
+set -goq @theme-clock-mode-colour blue
+set -goq @theme-clock-mode-style 24
+set -goq @theme-display-panes-active-colour red
+set -goq @theme-display-panes-colour blue
+set -goq @theme-message-bg yellow
+set -goq @theme-message-command-bg green
+set -goq @theme-message-command-fg black
+set -goq @theme-message-fg black
+set -goq @theme-mode-bg yellow
+set -goq @theme-mode-fg black
+set -goq @theme-pane-active-border-bg default
+set -goq @theme-pane-active-border-fg green
+set -goq @theme-pane-border-bg default
+set -goq @theme-pane-border-fg white
+set -goq @theme-status-bg green
+set -goq @theme-status-fg black
+set -goq @theme-status-interval 15
+set -goq @theme-status-justify left
+set -goq @theme-status-left "[#S] "
+set -goq @theme-status-left-bg green
+set -goq @theme-status-left-fg black
+set -goq @theme-status-left-length 40
+set -goq @theme-status-right " \"#H\" %H:%M %d-%b-%y"
+set -goq @theme-status-right-bg green
+set -goq @theme-status-right-fg black
+set -goq @theme-status-right-length 40
+set -goq @theme-window-status-activity-bg black
+set -goq @theme-window-status-activity-fg green
+set -goq @theme-window-status-current-bg green
+set -goq @theme-window-status-current-fg black
+set -goq @theme-window-status-current-format "#I:#W#F"
+set -goq @theme-window-status-format "#I:#W#F"
+set -goq @theme-window-status-separator " "
 
-# Basic status bar colors
-set -g status-style bg=green,fg=black
-
-# Left side of status bar
-set -g status-left-style bg=green,fg=black
-set -g status-left-length 10
-set -g status-left "[#S]"
-
-# Right side of status bar
-set -g status-right-style bg=green,fg=black
-set -g status-right-length 40
-set -g status-right "\"#H\" %H:%M %d-%b-%y"
-
-# Window status
-set -g window-status-format "#I:#W#F"
-set -g window-status-current-format "#I:#W#F"
-
-# Current window status
-set -g window-status-current-style bg=green,fg=black
-
-# Window with activity status
-set -g window-status-activity-style bg=black,fg=green
-
-# Window separator
-set -g window-status-separator " "
-
-# Window status alignment
-set -g status-justify left
-
-# Pane border
-set -g pane-border-style bg=default,fg=white
-
-# Active pane border
-set -g pane-active-border-style bg=default,fg=green
-
-# Pane number indicator
-set -g display-panes-colour blue
-set -g display-panes-active-colour red
-
-# Clock mode
-set -g clock-mode-colour blue
-set -g clock-mode-style 24
-
-# Message
-set -g message-style bg=yellow,fg=black
-
-# Command message
-set -g message-command-style bg=green,fg=black
-
-# Mode
-set -g mode-style bg=yellow,fg=black
+# Apply theme options
+set -gF display-panes-active-colour "#{@theme-display-panes-active-colour}"
+set -gF display-panes-colour "#{@theme-display-panes-colour}"
+set -gF message-command-style "fg=#{@theme-message-command-fg},bg=#{@theme-message-command-bg}"
+set -gF message-style "fg=#{@theme-message-fg},bg=#{@theme-message-bg}"
+set -gF status-interval "#{@theme-status-interval}"
+set -gF status-justify "#{@theme-status-justify}"
+set -gF status-left "#{@theme-status-left}"
+set -gF status-left-length "#{@theme-status-left-length}"
+set -gF status-left-style "fg=#{@theme-status-left-fg},bg=#{@theme-status-left-bg}"
+set -gF status-right "#{@theme-status-right}"
+set -gF status-right-length "#{@theme-status-right-length}"
+set -gF status-right-style "fg=#{@theme-status-right-fg},bg=#{@theme-status-right-bg}"
+set -gF status-style "fg=#{@theme-status-fg},bg=#{@theme-status-bg}"
+set -gwF clock-mode-colour "#{@theme-clock-mode-colour}"
+set -gwF clock-mode-style "#{@theme-clock-mode-style}"
+set -gwF mode-style "fg=#{@theme-mode-fg},bg=#{@theme-mode-bg}"
+set -gwF pane-active-border-style "fg=#{@theme-pane-active-border-fg},bg=#{@theme-pane-active-border-bg}"
+set -gwF pane-border-style "fg=#{@theme-pane-border-fg},bg=#{@theme-pane-border-bg}"
+set -gwF window-status-activity-style "fg=#{@theme-window-status-activity-fg},bg=#{@theme-window-status-activity-bg}"
+set -gwF window-status-current-format "#{@theme-window-status-current-format}"
+set -gwF window-status-current-style "fg=#{@theme-window-status-current-fg},bg=#{@theme-window-status-current-bg}"
+set -gwF window-status-format "#{@theme-window-status-format}"
+set -gwF window-status-separator "#{@theme-window-status-separator}"

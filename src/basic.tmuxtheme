@@ -1,0 +1,50 @@
+#
+# Basic theme
+#
+
+# Themepack format options
+set -goq @themepack-status-left-area-left-format "#S"
+set -goq @themepack-status-left-area-middle-format "#I"
+set -goq @themepack-status-left-area-right-format "#P"
+set -goq @themepack-status-right-area-left-format "#H"
+set -goq @themepack-status-right-area-middle-format "%H:%M:%S"
+set -goq @themepack-status-right-area-right-format "%d-%b-%y"
+set -goq @themepack-window-status-current-format "#I:#W#F"
+set -goq @themepack-window-status-format "#I:#W#F"
+
+# Theme options
+set -goq  @theme-clock-mode-colour red
+set -goq  @theme-clock-mode-style 24
+set -goq  @theme-display-panes-active-colour default
+set -goq  @theme-display-panes-colour default
+set -goq  @theme-message-bg default
+set -goq  @theme-message-command-bg default
+set -goq  @theme-message-command-fg default
+set -goq  @theme-message-fg default
+set -goq  @theme-mode-bg red
+set -goq  @theme-mode-fg default
+set -goq  @theme-pane-active-border-bg default
+set -goq  @theme-pane-active-border-fg green
+set -goq  @theme-pane-border-bg default
+set -goq  @theme-pane-border-fg default
+set -goq  @theme-status-bg black
+set -goq  @theme-status-fg cyan
+set -goq  @theme-status-interval 1
+set -goq  @theme-status-justify centre
+set -goqF @theme-status-left "#{@themepack-status-left-area-left-format} #[fg=white]» #[fg=yellow]#{@themepack-status-left-area-middle-format} #[fg=cyan]#{@themepack-status-left-area-right-format}"
+set -goq  @theme-status-left-bg black
+set -goq  @theme-status-left-fg green
+set -goq  @theme-status-left-length 40
+set -goqF @theme-status-right "#{@themepack-status-right-area-left-format} #[fg=white]« #[fg=yellow]#{@themepack-status-right-area-middle-format} #[fg=green]#{@themepack-status-right-area-right-format}"
+set -goq  @theme-status-right-bg black
+set -goq  @theme-status-right-fg cyan
+set -goq  @theme-status-right-length 40
+set -goq  @theme-window-status-activity-bg black
+set -goq  @theme-window-status-activity-fg yellow
+set -goq  @theme-window-status-current-bg red
+set -goq  @theme-window-status-current-fg black
+set -goqF @theme-window-status-current-format " #{@themepack-window-status-current-format} "
+set -goqF @theme-window-status-format " #{@themepack-window-status-format} "
+set -goq  @theme-window-status-separator ""
+
+#= include "_apply"

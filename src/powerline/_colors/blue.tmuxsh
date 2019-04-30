@@ -1,0 +1,3 @@
+set -goq  @powerline-color-main-1 colour24
+set -goq  @powerline-color-main-2 colour33
+set -goq  @powerline-color-main-3 colour31
