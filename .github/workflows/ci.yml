@@ -31,4 +31,6 @@ jobs:
           ./configure && make && sudo make install
           cd ..
       - name: Run all tests
+        env:
+          TMUX_VERSION: ${{ matrix.tmux_version }}
         run: make test
