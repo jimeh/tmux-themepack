@@ -26,10 +26,10 @@ set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235]
 
 # Window status
 set -g window-status-format "  #I:#W#F  "
-set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour129,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour127,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
 
 # Current window status
-set -g window-status-current-style bg=colour125,fg=colour235
+set -g window-status-current-style bg=colour100,fg=colour235
 
 # Window with activity status
 set -g window-status-activity-style bg=colour233,fg=colour245
@@ -58,7 +58,7 @@ set -g clock-mode-style 24
 set -g message-style bg=colour125,fg=black
 
 # Command message
-set -g message-command-style bg=colour233,fg=black
+set -g message-command-style bg=colour125,fg=black
 
 # Mode
-set -g mode-style bg=colour125,fg=colour231
+set -g mode-style bg=colour125,fg=black

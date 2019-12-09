@@ -58,7 +58,7 @@ set -g clock-mode-style 24
 set -g message-style bg=colour100,fg=black
 
 # Command message
-set -g message-command-style bg=colour233,fg=black
+set -g message-command-style bg=colour100,fg=black
 
 # Mode
-set -g mode-style bg=colour100,fg=colour235
+set -g mode-style bg=colour100,fg=black

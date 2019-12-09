@@ -1,5 +1,5 @@
 #
-# Powerline Cyan - Tmux Theme
+# Powerline Purple - Tmux Theme
 # Created by Jim Myhrberg <contact@jimeh.me>.
 #
 # Inspired by vim-powerline: https://github.com/Lokaltog/powerline
@@ -17,7 +17,7 @@ set -g status-style fg=colour240,bg=colour233
 # Left side of status bar
 set -g status-left-style bg=colour233,fg=colour243
 set -g status-left-length 40
-set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+set -g status-left "#[fg=colour233,bg=colour90,bold] #S #[fg=colour90,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 
 # Right side of status bar
 set -g status-right-style bg=colour233,fg=colour243
@@ -26,7 +26,7 @@ set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235]
 
 # Window status
 set -g window-status-format "  #I:#W#F  "
-set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour81,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour129,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour100,fg=colour235
@@ -44,21 +44,21 @@ set -g status-justify centre
 set -g pane-border-style bg=default,fg=colour238
 
 # Active pane border
-set -g pane-active-border-style bg=default,fg=colour39
+set -g pane-active-border-style bg=default,fg=colour90
 
 # Pane number indicator
 set -g display-panes-colour colour233
 set -g display-panes-active-colour colour245
 
 # Clock mode
-set -g clock-mode-colour colour39
+set -g clock-mode-colour colour90
 set -g clock-mode-style 24
 
 # Message
-set -g message-style bg=colour39,fg=black
+set -g message-style bg=colour90,fg=black
 
 # Command message
-set -g message-command-style bg=colour39,fg=black
+set -g message-command-style bg=colour90,fg=black
 
 # Mode
-set -g mode-style bg=colour39,fg=black
+set -g mode-style bg=colour90,fg=black
