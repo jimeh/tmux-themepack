@@ -17,7 +17,7 @@ lint:
 
 .PHONY: test
 test: needs-build
-	cd test && go test -v ./...
+	cd test && go test -count=1 -v ./...
 
 .PHONY: needs-build
 needs-build:

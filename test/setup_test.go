@@ -53,10 +53,7 @@ func tmuxHasOptions(t *testing.T, theme string, s tmux.Scope, m tmux.Options) {
 			_, ok := opts[k]
 			assert.Truef(t, ok, `Key "%s" is not available in %s`, k, theme)
 			if ok {
-				assert.Equalf(t,
-					v, opts[k],
-					`Key "%s" in "%s"`, k, theme,
-				)
+				assert.Equalf(t, v, opts[k], `Key "%s" in "%s"`, k, theme)
 			}
 		}
 	}
