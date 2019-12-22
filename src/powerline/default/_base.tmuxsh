@@ -2,6 +2,8 @@
 
 #= include "powerline/_powerline-options"
 
+#= include "powerline/_themepack-options"
+
 #= include "powerline/_theme-options"
 #= include "powerline/_theme-options-default"
 

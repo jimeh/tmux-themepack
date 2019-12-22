@@ -1,4 +1,4 @@
-# Themepack format options
+# Themepack options
 set -goq @themepack-status-left-area-left-format "#S"
 set -goq @themepack-status-left-area-middle-format "#(whoami)"
 set -goq @themepack-status-left-area-right-format "#I:#P"
@@ -8,4 +8,14 @@ set -goq @themepack-status-right-area-right-format "#H"
 set -goq @themepack-window-status-current-format "#I:#W#F"
 set -goq @themepack-window-status-format "#I:#W#F"
 
-#= include "_themepack-options-affixes"
+set -goq @themepack-prefix-key-on-format "."
+set -goq @themepack-prefix-key-off-format " "
+set -goq @themepack-pane-sync-on-format "SYNC"
+set -goq @themepack-pane-sync-off-format "    "
+
+set -goqF @themepack-prefix-key-on "#[fg=#{@powerline-status-left-area-right-bg}]#[bg=#{@powerline-color-black-1}]#[fg=#{@powerline-color-main-2}]#[bg=#{@powerline-color-black-1}] #{@themepack-prefix-key-on-format} #[fg=#{@powerline-status-bg}]#[bg=#{@powerline-color-black-1}]"
+set -goqF @themepack-prefix-key-off "#[fg=#{@powerline-status-left-area-right-bg}]#[bg=#{@powerline-status-bg}] #{@themepack-prefix-key-off-format}  "
+set -goqF @themepack-pane-sync-on " #[fg=#{@powerline-color-main-2}]#[bg=#{@powerline-status-bg}]#[fg=#{@powerline-color-black-1}]#[bg=#{@powerline-color-main-2}] #{@themepack-pane-sync-on-format} #[fg=#{@powerline-status-right-area-left-bg}]#[bg=#{@powerline-color-main-2}]"
+set -goqF @themepack-pane-sync-off "   #{@themepack-pane-sync-off-format} #[fg=#{@powerline-status-right-area-left-bg}]#[bg=#{@powerline-status-bg}]"
+
+#= include "_themepack-setup"

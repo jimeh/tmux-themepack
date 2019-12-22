@@ -25,3 +25,11 @@ set -gqF @themepack-status-right-area-middle-format "#{@themepack-status-right-a
 set -gqF @themepack-status-right-area-right-format "#{@themepack-status-right-area-right-prefix}#{@themepack-status-right-area-right-format}#{@themepack-status-right-area-right-suffix}"
 set -gqF @themepack-window-status-current-format "#{@themepack-window-status-current-prefix}#{@themepack-window-status-current-format}#{@themepack-window-status-current-suffix}"
 set -gqF @themepack-window-status-format "#{@themepack-window-status-prefix}#{@themepack-window-status-format}#{@themepack-window-status-suffix}"
+
+# Prefix key status
+set -goq @themepack-prefix-key-status "#{?client_prefix,#{@themepack-prefix-key-on},#{@themepack-prefix-key-off}}"
+set -gqF @theme-status-left-suffix "#{@theme-status-left-suffix}#{@themepack-prefix-key-status}"
+
+# Pane Sync status
+set -goq @themepack-pane-sync-status "#{?pane_synchronized,#{@themepack-pane-sync-on},#{@themepack-pane-sync-off}}"
+set -gqF @theme-status-right-prefix "#{@themepack-pane-sync-status}#{@theme-status-right-prefix}"

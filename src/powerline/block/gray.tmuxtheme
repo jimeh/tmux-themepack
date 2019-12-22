@@ -2,8 +2,6 @@
 # Powerline Gray Block - Tmux Themepack
 #= include "powerline/_info"
 
-#= include "powerline/_themepack-options"
-
 # Powerline color options
 #= include "powerline/_colors/gray"
 #= include "powerline/block/_base"

@@ -2,7 +2,7 @@
 # Basic theme
 #
 
-# Themepack format options
+# Themepack options
 set -goq @themepack-status-left-area-left-format "#S"
 set -goq @themepack-status-left-area-middle-format "#I"
 set -goq @themepack-status-left-area-right-format "#P"
@@ -12,7 +12,17 @@ set -goq @themepack-status-right-area-right-format "%d-%b-%y"
 set -goq @themepack-window-status-current-format "#I:#W#F"
 set -goq @themepack-window-status-format "#I:#W#F"
 
-#= include "_themepack-options-affixes"
+set -goqF @themepack-prefix-key-on-format "#{s/C-/\^/:prefix}"
+set -goq  @themepack-prefix-key-off-format "  "
+set -goq  @themepack-pane-sync-on-format "SYNC"
+set -goq  @themepack-pane-sync-off-format "    "
+
+set -goqF @themepack-prefix-key-on " #[fg=black]#[bg=cyan] #{@themepack-prefix-key-on-format} #[default] "
+set -goqF @themepack-prefix-key-off "  #{@themepack-prefix-key-off-format}  "
+set -goqF @themepack-pane-sync-on " #[fg=black]#[bg=yellow] #{@themepack-pane-sync-on-format} #[default] "
+set -goqF @themepack-pane-sync-off "  #{@themepack-pane-sync-off-format}  "
+
+#= include "_themepack-setup"
 
 # Theme options
 set -goq  @theme-clock-mode-colour red
