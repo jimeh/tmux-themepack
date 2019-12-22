@@ -2,7 +2,7 @@
 # Basic theme
 #
 
-# Themepack format options
+# Themepack options
 set -goq @themepack-status-left-area-left-format "#S"
 set -goq @themepack-status-left-area-middle-format "#I"
 set -goq @themepack-status-left-area-right-format "#P"
@@ -11,6 +11,16 @@ set -goq @themepack-status-right-area-middle-format "%H:%M:%S"
 set -goq @themepack-status-right-area-right-format "%d-%b-%y"
 set -goq @themepack-window-status-current-format "#I:#W#F"
 set -goq @themepack-window-status-format "#I:#W#F"
+
+set -goqF @themepack-prefix-key-on-format "#{s/C-/\^/:prefix}"
+set -goq  @themepack-prefix-key-off-format "  "
+set -goq  @themepack-pane-sync-on-format "SYNC"
+set -goq  @themepack-pane-sync-off-format "    "
+
+set -goqF @themepack-prefix-key-on " #[fg=black]#[bg=cyan] #{@themepack-prefix-key-on-format} #[default] "
+set -goqF @themepack-prefix-key-off "  #{@themepack-prefix-key-off-format}  "
+set -goqF @themepack-pane-sync-on " #[fg=black]#[bg=yellow] #{@themepack-pane-sync-on-format} #[default] "
+set -goqF @themepack-pane-sync-off "  #{@themepack-pane-sync-off-format}  "
 
 # Customizable prefixes and suffixes for @themepack-* format options
 set -goq @themepack-status-left-area-left-prefix ""
@@ -39,6 +49,14 @@ set -gqF @themepack-status-right-area-middle-format "#{@themepack-status-right-a
 set -gqF @themepack-status-right-area-right-format "#{@themepack-status-right-area-right-prefix}#{@themepack-status-right-area-right-format}#{@themepack-status-right-area-right-suffix}"
 set -gqF @themepack-window-status-current-format "#{@themepack-window-status-current-prefix}#{@themepack-window-status-current-format}#{@themepack-window-status-current-suffix}"
 set -gqF @themepack-window-status-format "#{@themepack-window-status-prefix}#{@themepack-window-status-format}#{@themepack-window-status-suffix}"
+
+# Prefix key status
+set -goq @themepack-prefix-key-status "#{?client_prefix,#{@themepack-prefix-key-on},#{@themepack-prefix-key-off}}"
+set -gqF @theme-status-left-suffix "#{@theme-status-left-suffix}#{@themepack-prefix-key-status}"
+
+# Pane Sync status
+set -goq @themepack-pane-sync-status "#{?pane_synchronized,#{@themepack-pane-sync-on},#{@themepack-pane-sync-off}}"
+set -gqF @theme-status-right-prefix "#{@themepack-pane-sync-status}#{@theme-status-right-prefix}"
 
 # Theme options
 set -goq  @theme-clock-mode-colour red
