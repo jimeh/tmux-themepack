@@ -45,3 +45,34 @@ func TestBasicTheme(t *testing.T) {
 		"status-style":                "fg=cyan,bg=black",
 	})
 }
+
+func TestBasicCustomizability(t *testing.T) {
+	name := "basic"
+	filename := "../" + name + ".tmuxtheme"
+
+	tmuxSetup()
+
+	out, err := tm.Exec("source-file", "tmux-custom-overrides.conf")
+	assert.NoErrorf(t, err, `%s: Failed to load overrides: %s`, name, out)
+
+	out, err = tm.Exec("source-file", filename)
+	assert.NoErrorf(t, err, `%s: Failed to load theme: %s`, name, out)
+
+	opts, err := tm.GetOptions(tmux.GlobalSession)
+	assert.NoError(t, err)
+	assert.Contains(t, opts["status-left"], "LLP:LLF:LLS")
+	assert.Contains(t, opts["status-left"], "LMP:LMF:LMS")
+	assert.Contains(t, opts["status-left"], "LRP:LRF:LRS")
+	assert.Contains(t, opts["status-right"], "RLP:RLF:RLS")
+	assert.Contains(t, opts["status-right"], "RMP:RMF:RMS")
+	assert.Contains(t, opts["status-right"], "RRP:RRF:RRS")
+
+	opts, err = tm.GetOptions(tmux.GlobalWindow)
+	assert.NoError(t, err)
+	assert.Contains(t, opts["window-status-current-format"],
+		"WSCP:WSCF:WSCS")
+	assert.Contains(t, opts["window-status-format"],
+		"WSP:WSF:WSS")
+
+	tmuxTearDown()
+}

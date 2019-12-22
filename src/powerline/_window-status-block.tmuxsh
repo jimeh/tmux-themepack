@@ -1,0 +1,7 @@
+set -goqF @theme-window-status-activity-bg "#{@theme-status-bg}"
+set -goqF @theme-window-status-activity-fg "#{@powerline-color-activity-1}"
+set -goqF @theme-window-status-current-bg "#{@powerline-color-main-1}"
+set -goqF @theme-window-status-current-fg "#{@powerline-color-black-1}"
+set -goq  @theme-window-status-separator ""
+set -goqF @theme-window-status-format " #{@themepack-window-status-format} "
+set -goqF @theme-window-status-current-format " #{@themepack-window-status-current-format} "

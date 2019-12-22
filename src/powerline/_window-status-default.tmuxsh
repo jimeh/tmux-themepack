@@ -1,0 +1,7 @@
+set -goqF @theme-window-status-activity-bg "#{@theme-status-bg}"
+set -goqF @theme-window-status-activity-fg "#{@powerline-color-activity-1}"
+set -goqF @theme-window-status-current-bg "#{@powerline-color-black-1}"
+set -goqF @theme-window-status-current-fg "#{@powerline-color-main-2}"
+set -goq  @theme-window-status-separator ""
+set -goqF @theme-window-status-format "  #{@themepack-window-status-format}  "
+set -goqF @theme-window-status-current-format "#[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg}]#[fg=#{@theme-window-status-current-fg},nobold] #{@themepack-window-status-current-format} #[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg},nobold]"

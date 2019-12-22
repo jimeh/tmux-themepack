@@ -1,7 +1,6 @@
 # Tmux Themepack
 
-A pack of various themes for Tmux.
-
+A pack of various themes for Tmux for 2.6 or later.
 
 ## Installation
 
@@ -177,23 +176,29 @@ left side.
 
 ![powerline-double-yellow](https://github.com/jimeh/tmux-themepack-previews/raw/1.0.0/powerline/double/yellow-preview.png)
 
+## Customizing
 
-## Tips
+All themes are built with overridable custom @-prefixed Tmux options, which
+means that any part of a theme can be easily customized.
 
-- Use different themes/colors on different machines by using some sort of
-  wrapper around launching Tmux.
+To customize a theme, simply look at the source to see the list of Tmux options
+with names beginning with a `@`, and simply set the desired option in your
+`tmux.conf` before the theme is loaded.
 
+## Development / Contributing
 
-## Contributing
+If you want to contribute a theme, please have them use custom @-prefixed Tmux
+options like existing themes, so they can be customized the same way.
 
-If you decide to contribute your own tmux themes, please try to base it on the
-`default.tmuxtheme` theme. This ensures that switching between themes works as
-it should and completely overwrites all settings from previous themes.
+New themes should be created under the `src` folder with a `.tmuxtheme`
+extension. Please have a look at existing themes to see how files can be
+included and shared between themes.
 
-If it's not possible to base your theme on my default one, something is probably
-missing from it. So please contribute a fix to the default theme too in that
-case :)
+To build all themes, just run `make build` from the root of the project.
 
+All themes also have unit tests which can be found under the `test`
+directory. They are written in [Go](https://golang.org/), but hopefully easy to
+understand. To run all tests, just run `make test` from the root of the project.
 
 ## License
 

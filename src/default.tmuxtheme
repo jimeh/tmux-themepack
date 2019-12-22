@@ -1,0 +1,44 @@
+#
+# Default Tmux Theme
+#
+
+# This theme matches Tmux's default style as closely as possible. It functions
+# as a template for creating new themes, and as a way to reset a running Tmux
+# server's style to it's defaults.
+
+# Theme options
+set -goq @theme-clock-mode-colour blue
+set -goq @theme-clock-mode-style 24
+set -goq @theme-display-panes-active-colour red
+set -goq @theme-display-panes-colour blue
+set -goq @theme-message-bg yellow
+set -goq @theme-message-command-bg green
+set -goq @theme-message-command-fg black
+set -goq @theme-message-fg black
+set -goq @theme-mode-bg yellow
+set -goq @theme-mode-fg black
+set -goq @theme-pane-active-border-bg default
+set -goq @theme-pane-active-border-fg green
+set -goq @theme-pane-border-bg default
+set -goq @theme-pane-border-fg white
+set -goq @theme-status-bg green
+set -goq @theme-status-fg black
+set -goq @theme-status-interval 15
+set -goq @theme-status-justify left
+set -goq @theme-status-left "[#S] "
+set -goq @theme-status-left-bg green
+set -goq @theme-status-left-fg black
+set -goq @theme-status-left-length 40
+set -goq @theme-status-right " \"#H\" %H:%M %d-%b-%y"
+set -goq @theme-status-right-bg green
+set -goq @theme-status-right-fg black
+set -goq @theme-status-right-length 40
+set -goq @theme-window-status-activity-bg black
+set -goq @theme-window-status-activity-fg green
+set -goq @theme-window-status-current-bg green
+set -goq @theme-window-status-current-fg black
+set -goq @theme-window-status-current-format "#I:#W#F"
+set -goq @theme-window-status-format "#I:#W#F"
+set -goq @theme-window-status-separator " "
+
+#= include "_apply"

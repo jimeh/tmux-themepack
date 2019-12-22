@@ -1,0 +1,9 @@
+#
+# Powerline Double Orange - Tmux Themepack
+#= include "powerline/_info"
+
+#= include "powerline/_formats"
+
+# Powerline color options
+#= include "powerline/_colors/orange"
+#= include "powerline/double/_base"

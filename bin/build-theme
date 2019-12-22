@@ -1,0 +1,107 @@
+#! /usr/bin/env bash
+#set -e
+shopt -s extglob
+[ -n "$BUILD_THEME_DEBUG" ] && set -x
+
+trim() {
+  local string="$*"
+  string="${string#"${string%%[![:space:]]*}"}"
+  string="${string%"${string##*[![:space:]]}"}"
+  echo -n "$string"
+}
+
+find-included() {
+  local needle source dir found
+  needle="$1"
+  source="$2"
+  dir="$(dirname "$source")"
+  found=""
+
+  if [[ "${needle:0:1}" == "/" ]]; then
+    echo "$needle"
+    return 0
+  fi
+
+  while [ -z "$found" ] && [[ ! "$dir" =~ ^(\/|\.|\.\.)$ ]]; do
+    if [ -f "${dir}/${needle}" ]; then
+      found="${dir}/${needle}"
+    elif [ -f "${dir}/${needle}.tmuxsh" ]; then
+      found="${dir}/${needle}.tmuxsh"
+    elif [ -f "${dir}/${needle}.tmuxtheme" ]; then
+      found="${dir}/${needle}.tmuxtheme"
+    else
+      dir="$(dirname "$dir")"
+    fi
+  done
+
+  if [ -z "$found" ]; then
+    echo "ERROR: Could not find \"$needle\" to include in \"$source\"" 1>&2
+    return 1
+  else
+    # echo "INFO: Found \"$needle\" to include in \"$source\"" 1>&2
+    echo "$found"
+    return 0
+  fi
+}
+
+build-theme() {
+  local source target output file line included err
+  source="$1"
+  target="$2"
+  output=""
+  err="0"
+
+  while IFS= read -r line; do
+    if [[ "$line" =~ ^#=\ *include\ \"(.+)\".*$ ]]; then
+      if file="$(find-included "${BASH_REMATCH[1]}" "$source")"; then
+        if included="$(build-theme "${file}")"; then
+          output="${output}${included}
+"
+        else
+          err="1"
+        fi
+      else
+        err="1"
+      fi
+    else
+      output="${output}${line}
+"
+    fi
+  done < "$source"
+
+  if [ "$err" != "0" ]; then
+    return "$err"
+  elif [ -z "$target" ]; then
+    echo "$(trim "$output")"
+  else
+    mkdir -p "$(dirname "$target")"
+    echo "$(trim "$output")" > "$target"
+  fi
+}
+
+help() {
+  echo "usage: build-theme <source-file> [<target-file>]"
+  echo ""
+  echo "Arguments:"
+  echo "  <source-file>  - The theme file to build."
+  echo "  <target-file>  - Write output to specified file. If not given, print"
+  echo "                   output to STDOUT."
+}
+
+main() {
+  local source="$1"
+  local target="$2"
+
+  if [ -z "$source" ]; then
+    help
+    exit 1
+  elif [[ " $* " =~ ^.*\ (-h|--help)\ .*$ ]]; then
+    help
+  else
+    build-theme "$source" "$target"
+    return "$?"
+  fi
+}
+
+main "$@"
+exit "$?"
