@@ -25,3 +25,6 @@ set -goqF @theme-status-right "#[fg=#{@powerline-status-right-area-left-bg},bg=#
 set -goqF @theme-status-right-bg "#{@powerline-status-right-bg}"
 set -goqF @theme-status-right-fg "#{@powerline-status-right-fg}"
 set -goq  @theme-status-right-length 150
+set -goqF @theme-window-status-activity-bg "#{@theme-status-bg}"
+set -goqF @theme-window-status-activity-fg "#{@powerline-color-activity-1}"
+set -goq  @theme-window-status-separator ""

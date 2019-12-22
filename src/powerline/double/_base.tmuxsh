@@ -6,6 +6,6 @@ set -goqF @powerline-status-right-area-right-bg "#{@powerline-color-main-1}"
 #= include "powerline/_powerline-options"
 
 #= include "powerline/_theme-options"
-#= include "powerline/_window-status-default"
+#= include "powerline/_theme-options-default"
 
 #= include "_apply"

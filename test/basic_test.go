@@ -46,13 +46,13 @@ func TestBasicTheme(t *testing.T) {
 	})
 }
 
-func TestBasicCustomizability(t *testing.T) {
+func TestBasicThemepackOverrides(t *testing.T) {
 	name := "basic"
 	filename := "../" + name + ".tmuxtheme"
 
 	tmuxSetup()
 
-	out, err := tm.Exec("source-file", "tmux-custom-overrides.conf")
+	out, err := tm.Exec("source-file", "themepack-overrides.conf")
 	assert.NoErrorf(t, err, `%s: Failed to load overrides: %s`, name, out)
 
 	out, err = tm.Exec("source-file", filename)
@@ -69,10 +69,39 @@ func TestBasicCustomizability(t *testing.T) {
 
 	opts, err = tm.GetOptions(tmux.GlobalWindow)
 	assert.NoError(t, err)
-	assert.Contains(t, opts["window-status-current-format"],
-		"WSCP:WSCF:WSCS")
-	assert.Contains(t, opts["window-status-format"],
-		"WSP:WSF:WSS")
+	assert.Contains(t, opts["window-status-current-format"], "WSCP:WSCF:WSCS")
+	assert.Contains(t, opts["window-status-format"], "WSP:WSF:WSS")
+
+	tmuxTearDown()
+}
+
+func TestBasicThemeOverrides(t *testing.T) {
+	name := "basic"
+	filename := "../" + name + ".tmuxtheme"
+
+	tmuxSetup()
+
+	out, err := tm.Exec("source-file", "theme-overrides.conf")
+	assert.NoErrorf(t, err, `%s: Failed to load overrides: %s`, name, out)
+
+	out, err = tm.Exec("source-file", filename)
+	assert.NoErrorf(t, err, `%s: Failed to load theme: %s`, name, out)
+
+	opts, err := tm.GetOptions(tmux.GlobalSession)
+	assert.NoError(t, err)
+
+	assertHasPrefix(t, opts["status-left"], "SLP=")
+	assertHasSuffix(t, opts["status-left"], "=SLS")
+	assertHasPrefix(t, opts["status-right"], "SRP=")
+	assertHasSuffix(t, opts["status-right"], "=SRS")
+
+	opts, err = tm.GetOptions(tmux.GlobalWindow)
+	assert.NoError(t, err)
+
+	assertHasPrefix(t, opts["window-status-current-format"], "WSCP=")
+	assertHasSuffix(t, opts["window-status-current-format"], "=WSCS")
+	assertHasPrefix(t, opts["window-status-format"], "WSP=")
+	assertHasSuffix(t, opts["window-status-format"], "=WSS")
 
 	tmuxTearDown()
 }
