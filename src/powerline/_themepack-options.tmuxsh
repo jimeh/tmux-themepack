@@ -1,0 +1,11 @@
+# Themepack format options
+set -goq @themepack-status-left-area-left-format "#S"
+set -goq @themepack-status-left-area-middle-format "#(whoami)"
+set -goq @themepack-status-left-area-right-format "#I:#P"
+set -goq @themepack-status-right-area-left-format "%H:%M:%S"
+set -goq @themepack-status-right-area-middle-format "%d-%b-%y"
+set -goq @themepack-status-right-area-right-format "#H"
+set -goq @themepack-window-status-current-format "#I:#W#F"
+set -goq @themepack-window-status-format "#I:#W#F"
+
+#= include "_themepack-options-affixes"

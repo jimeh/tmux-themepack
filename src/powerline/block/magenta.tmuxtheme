@@ -2,7 +2,7 @@
 # Powerline Magenta Block - Tmux Themepack
 #= include "powerline/_info"
 
-#= include "powerline/_formats"
+#= include "powerline/_themepack-options"
 
 # Powerline color options
 #= include "powerline/_colors/magenta"

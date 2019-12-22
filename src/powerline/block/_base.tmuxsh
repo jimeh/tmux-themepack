@@ -6,6 +6,6 @@ set -goqF @powerline-color-activity-1 "#{@powerline-color-main-3}"
 #= include "powerline/_powerline-options"
 
 #= include "powerline/_theme-options"
-#= include "powerline/_window-status-block"
+#= include "powerline/_theme-options-block"
 
 #= include "_apply"

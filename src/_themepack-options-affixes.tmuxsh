@@ -1,4 +1,22 @@
-# Themepack format options - combine prefixes, formats, and suffixes
+# Customizable prefixes and suffixes for @themepack-* format options
+set -goq @themepack-status-left-area-left-prefix ""
+set -goq @themepack-status-left-area-left-suffix ""
+set -goq @themepack-status-left-area-middle-prefix ""
+set -goq @themepack-status-left-area-middle-suffix ""
+set -goq @themepack-status-left-area-right-prefix ""
+set -goq @themepack-status-left-area-right-suffix ""
+set -goq @themepack-status-right-area-left-prefix ""
+set -goq @themepack-status-right-area-left-suffix ""
+set -goq @themepack-status-right-area-middle-prefix ""
+set -goq @themepack-status-right-area-middle-suffix ""
+set -goq @themepack-status-right-area-right-prefix ""
+set -goq @themepack-status-right-area-right-suffix ""
+set -goq @themepack-window-status-current-prefix ""
+set -goq @themepack-window-status-current-suffix ""
+set -goq @themepack-window-status-prefix ""
+set -goq @themepack-window-status-suffix ""
+
+# Apply prefixes and suffixes to @themepack-* format options
 set -gqF @themepack-status-left-area-left-format "#{@themepack-status-left-area-left-prefix}#{@themepack-status-left-area-left-format}#{@themepack-status-left-area-left-suffix}"
 set -gqF @themepack-status-left-area-middle-format "#{@themepack-status-left-area-middle-prefix}#{@themepack-status-left-area-middle-format}#{@themepack-status-left-area-middle-suffix}"
 set -gqF @themepack-status-left-area-right-format "#{@themepack-status-left-area-right-prefix}#{@themepack-status-left-area-right-format}#{@themepack-status-left-area-right-suffix}"
