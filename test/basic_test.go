@@ -30,16 +30,20 @@ func TestBasicTheme(t *testing.T) {
 	})
 
 	tmuxHasOptions(t, theme, tmux.GlobalSession, tmux.Options{
+		"@themepack-prefix-key-on":    " #[fg=black]#[bg=cyan] ^b #[default] ",
+		"@themepack-prefix-key-off":   "      ",
+		"@themepack-pane-sync-on":     " #[fg=black]#[bg=yellow] SYNC #[default] ",
+		"@themepack-pane-sync-off":    "        ",
 		"display-panes-active-colour": "default",
 		"display-panes-colour":        "default",
 		"message-command-style":       "default",
 		"message-style":               "default",
 		"status-interval":             "1",
 		"status-justify":              "centre",
-		"status-left":                 "#S #[fg=white]» #[fg=yellow]#I #[fg=cyan]#P",
+		"status-left":                 "#S #[fg=white]» #[fg=yellow]#I #[fg=cyan]#P" + powerlinePrefixKeyStatus,
 		"status-left-length":          "40",
 		"status-left-style":           "fg=green,bg=black",
-		"status-right":                "#H #[fg=white]« #[fg=yellow]%H:%M:%S #[fg=green]%d-%b-%y",
+		"status-right":                powerlinePaneSyncStatus + "#H #[fg=white]« #[fg=yellow]%H:%M:%S #[fg=green]%d-%b-%y",
 		"status-right-length":         "40",
 		"status-right-style":          "fg=cyan,bg=black",
 		"status-style":                "fg=cyan,bg=black",
@@ -91,8 +95,8 @@ func TestBasicThemeOverrides(t *testing.T) {
 	assert.NoError(t, err)
 
 	assertHasPrefix(t, opts["status-left"], "SLP=")
-	assertHasSuffix(t, opts["status-left"], "=SLS")
-	assertHasPrefix(t, opts["status-right"], "SRP=")
+	assertHasSuffix(t, opts["status-left"], "=SLS"+powerlinePrefixKeyStatus)
+	assertHasPrefix(t, opts["status-right"], powerlinePaneSyncStatus+"SRP=")
 	assertHasSuffix(t, opts["status-right"], "=SRS")
 
 	opts, err = tm.GetOptions(tmux.GlobalWindow)

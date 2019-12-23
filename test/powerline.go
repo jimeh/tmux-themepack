@@ -1,5 +1,8 @@
 package test
 
+var powerlinePrefixKeyStatus = `#{?client_prefix,#{@themepack-prefix-key-on},#{@themepack-prefix-key-off}}`
+var powerlinePaneSyncStatus = `#{?pane_synchronized,#{@themepack-pane-sync-on},#{@themepack-pane-sync-off}}`
+
 var powerlineColors = map[string]struct {
 	filename string
 	color1   string

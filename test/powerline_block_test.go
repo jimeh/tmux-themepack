@@ -47,16 +47,20 @@ func TestPowerlineBlockThemes(t *testing.T) {
 		})
 
 		tmuxHasOptions(t, filename, tmux.GlobalSession, tmux.Options{
+			"@themepack-pane-sync-off":    "        #[fg=colour235]#[bg=colour233]",
+			"@themepack-pane-sync-on":     " #[fg=" + c.color2 + "]#[bg=colour233]#[fg=black]#[bg=" + c.color2 + "] SYNC #[fg=colour235]#[bg=" + c.color2 + "]",
+			"@themepack-prefix-key-off":   "#[fg=colour235]#[bg=colour233]    ",
+			"@themepack-prefix-key-on":    "#[fg=colour235]#[bg=black]#[fg=" + c.color2 + "]#[bg=black] . #[fg=colour233]#[bg=black]",
 			"display-panes-active-colour": "colour245",
 			"display-panes-colour":        "colour233",
 			"message-command-style":       "fg=black,bg=" + c.color1,
 			"message-style":               "fg=black,bg=" + c.color1,
 			"status-interval":             "1",
 			"status-justify":              "centre",
-			"status-left":                 "#[fg=colour233,bg=" + c.color1 + ",bold] #S #[fg=" + c.color1 + ",bg=colour240,nobold]\ue0b0#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]\ue0b0#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]\ue0b0",
+			"status-left":                 "#[fg=colour233,bg=" + c.color1 + ",bold] #S #[fg=" + c.color1 + ",bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P " + powerlinePrefixKeyStatus,
 			"status-left-length":          "40",
 			"status-left-style":           "fg=colour243,bg=colour233",
-			"status-right":                "#[fg=colour235,bg=colour233]\ue0b2#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]\ue0b2#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour245,bg=colour240]\ue0b2#[fg=colour233,bg=colour245,bold] #H ",
+			"status-right":                powerlinePaneSyncStatus + "#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour245,bg=colour240]#[fg=colour233,bg=colour245,bold] #H ",
 			"status-right-length":         "150",
 			"status-right-style":          "fg=colour243,bg=colour233",
 			"status-style":                "fg=colour240,bg=colour233",
@@ -113,8 +117,8 @@ func TestPowerlineBlockThemeOverrides(t *testing.T) {
 		assert.NoError(t, err)
 
 		assertHasPrefix(t, opts["status-left"], "SLP=")
-		assertHasSuffix(t, opts["status-left"], "=SLS")
-		assertHasPrefix(t, opts["status-right"], "SRP=")
+		assertHasSuffix(t, opts["status-left"], "=SLS"+powerlinePrefixKeyStatus)
+		assertHasPrefix(t, opts["status-right"], powerlinePaneSyncStatus+"SRP=")
 		assertHasSuffix(t, opts["status-right"], "=SRS")
 
 		opts, err = tm.GetOptions(tmux.GlobalWindow)
