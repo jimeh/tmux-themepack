@@ -1,8 +1,8 @@
 # Theme options
 set -goqF @theme-clock-mode-colour "#{@powerline-color-main-1}"
 set -goq  @theme-clock-mode-style 24
-set -goqF @theme-display-panes-active-colour "#{@powerline-color-grey-6}"
-set -goqF @theme-display-panes-colour "#{@powerline-color-grey-1}"
+set -goqF @theme-display-panes-active-colour "#{@powerline-color-main-1}"
+set -goqF @theme-display-panes-colour "#{@powerline-color-grey-4}"
 set -goqF @theme-message-bg "#{@powerline-color-main-1}"
 set -goqF @theme-message-command-bg "#{@powerline-color-main-1}"
 set -goqF @theme-message-command-fg "#{@powerline-color-black-1}"
