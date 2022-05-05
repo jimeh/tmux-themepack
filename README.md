@@ -38,6 +38,25 @@ Choose which theme is loaded by setting the `@themepack` option in your
 - `set -g @themepack 'powerline/double/magenta'`
 - `...`
 
+## Troubleshooting
+
+There can be a misbehavior when using themepacks while having Tmux hooks that
+also apply styles or customizations.
+
+An example of hook causing a wrong behavior:
+
+``` sh
+set-hook -g session-created 'run-shell "~/.tmux/plugins/tmux-powerline/powerline.sh init"'
+```
+
+The line above would cause a themepack to be applied only partially, or not at
+all.
+
+If you're experiencing any issue, *e.g.* themes not applied correctly, please
+have a look in your `.tmux.conf` for similar hooks. Do not forget to restart
+your Tmux server (*e.g.* with `tmux kill-server`) or to reload your Tmux
+configuration after removing the hooks.
+
 ## Themes
 
 ### Basic Themes
