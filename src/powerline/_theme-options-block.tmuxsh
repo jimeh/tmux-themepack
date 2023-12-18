@@ -1,4 +1,4 @@
 set -goqF @theme-window-status-current-bg "#{@powerline-color-main-1}"
 set -goqF @theme-window-status-current-fg "#{@powerline-color-black-1}"
-set -goqF @theme-window-status-format " #{@themepack-window-status-format} "
-set -goqF @theme-window-status-current-format " #{@themepack-window-status-current-format} "
+set -goqF @theme-window-status-format-custom " #{@themepack-window-status-format} "
+set -goqF @theme-window-status-current-format-custom " #{@themepack-window-status-current-format} "

@@ -1,5 +1,5 @@
 set -goqF @theme-window-status-current-bg "#{@powerline-color-black-1}"
 set -goqF @theme-window-status-current-fg "#{@powerline-color-main-2}"
-set -goqF @theme-window-status-format "  #{@themepack-window-status-format}  "
-set -goqF @theme-window-status-current-format "#[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg}]#[fg=#{@theme-window-status-current-fg},nobold] #{@themepack-window-status-current-format} #[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg},nobold]"
+set -goqF @theme-window-status-format-custom "  #{@themepack-window-status-format}  "
+set -goqF @theme-window-status-current-format-custom "#[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg}]#[fg=#{@theme-window-status-current-fg},nobold] #{@themepack-window-status-current-format} #[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg},nobold]"
  

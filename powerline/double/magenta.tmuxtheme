@@ -101,11 +101,11 @@ set -goqF @theme-status-bg "#{@powerline-status-bg}"
 set -goqF @theme-status-fg "#{@powerline-status-fg}"
 set -goq  @theme-status-interval 1
 set -goq  @theme-status-justify centre
-set -goqF @theme-status-left "#[fg=#{@powerline-status-left-area-left-fg},bg=#{@powerline-status-left-area-left-bg},bold] #{@themepack-status-left-area-left-format} #[fg=#{@powerline-status-left-area-left-bg},bg=#{@powerline-status-left-area-middle-bg},nobold]#[fg=#{@powerline-status-left-area-middle-fg},bg=#{@powerline-status-left-area-middle-bg}] #{@themepack-status-left-area-middle-format} #[fg=#{@powerline-status-left-area-middle-bg},bg=#{@powerline-status-left-area-right-bg}]#[fg=#{@powerline-status-left-area-right-fg},bg=#{@powerline-status-left-area-right-bg}] #{@themepack-status-left-area-right-format} #[fg=#{@powerline-status-left-area-right-bg},bg=#{@theme-status-bg},nobold]"
+set -goqF @theme-status-left-custom "#[fg=#{@powerline-status-left-area-left-fg},bg=#{@powerline-status-left-area-left-bg},bold] #{@themepack-status-left-area-left-format} #[fg=#{@powerline-status-left-area-left-bg},bg=#{@powerline-status-left-area-middle-bg},nobold]#[fg=#{@powerline-status-left-area-middle-fg},bg=#{@powerline-status-left-area-middle-bg}] #{@themepack-status-left-area-middle-format} #[fg=#{@powerline-status-left-area-middle-bg},bg=#{@powerline-status-left-area-right-bg}]#[fg=#{@powerline-status-left-area-right-fg},bg=#{@powerline-status-left-area-right-bg}] #{@themepack-status-left-area-right-format} #[fg=#{@powerline-status-left-area-right-bg},bg=#{@theme-status-bg},nobold]"
 set -goqF @theme-status-left-bg "#{@powerline-status-left-bg}"
 set -goqF @theme-status-left-fg "#{@powerline-status-left-fg}"
 set -goq  @theme-status-left-length 40
-set -goqF @theme-status-right "#[fg=#{@powerline-status-right-area-left-bg},bg=#{@theme-status-bg}]#[fg=#{@powerline-status-right-area-left-fg},bg=#{@powerline-status-right-area-left-bg}] #{@themepack-status-right-area-left-format} #[fg=#{@powerline-status-right-area-middle-bg},bg=#{@powerline-status-right-area-left-bg}]#[fg=#{@powerline-status-right-area-middle-fg},bg=#{@powerline-status-right-area-middle-bg}] #{@themepack-status-right-area-middle-format} #[fg=#{@powerline-status-right-area-right-bg},bg=#{@powerline-status-right-area-middle-bg}]#[fg=#{@powerline-status-right-area-right-fg},bg=#{@powerline-status-right-area-right-bg},bold] #{@themepack-status-right-area-right-format} "
+set -goqF @theme-status-right-custom "#[fg=#{@powerline-status-right-area-left-bg},bg=#{@theme-status-bg}]#[fg=#{@powerline-status-right-area-left-fg},bg=#{@powerline-status-right-area-left-bg}] #{@themepack-status-right-area-left-format} #[fg=#{@powerline-status-right-area-middle-bg},bg=#{@powerline-status-right-area-left-bg}]#[fg=#{@powerline-status-right-area-middle-fg},bg=#{@powerline-status-right-area-middle-bg}] #{@themepack-status-right-area-middle-format} #[fg=#{@powerline-status-right-area-right-bg},bg=#{@powerline-status-right-area-middle-bg}]#[fg=#{@powerline-status-right-area-right-fg},bg=#{@powerline-status-right-area-right-bg},bold] #{@themepack-status-right-area-right-format} "
 set -goqF @theme-status-right-bg "#{@powerline-status-right-bg}"
 set -goqF @theme-status-right-fg "#{@powerline-status-right-fg}"
 set -goq  @theme-status-right-length 150
@@ -114,8 +114,8 @@ set -goqF @theme-window-status-activity-fg "#{@powerline-color-activity-1}"
 set -goq  @theme-window-status-separator ""
 set -goqF @theme-window-status-current-bg "#{@powerline-color-black-1}"
 set -goqF @theme-window-status-current-fg "#{@powerline-color-main-2}"
-set -goqF @theme-window-status-format "  #{@themepack-window-status-format}  "
-set -goqF @theme-window-status-current-format "#[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg}]#[fg=#{@theme-window-status-current-fg},nobold] #{@themepack-window-status-current-format} #[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg},nobold]"
+set -goqF @theme-window-status-format-custom "  #{@themepack-window-status-format}  "
+set -goqF @theme-window-status-current-format-custom "#[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg}]#[fg=#{@theme-window-status-current-fg},nobold] #{@themepack-window-status-current-format} #[fg=#{@theme-status-bg},bg=#{@theme-window-status-current-bg},nobold]"
 
 # Customizable prefixes and suffixes for @theme-* format options
 set -goq @theme-status-left-prefix ""
@@ -128,10 +128,10 @@ set -goq @theme-window-status-prefix ""
 set -goq @theme-window-status-suffix ""
 
 # Apply prefixes and suffixes to @theme-* format options
-set -gqF @theme-status-left "#{@theme-status-left-prefix}#{@theme-status-left}#{@theme-status-left-suffix}"
-set -gqF @theme-status-right "#{@theme-status-right-prefix}#{@theme-status-right}#{@theme-status-right-suffix}"
-set -gqF @theme-window-status-current-format "#{@theme-window-status-current-prefix}#{@theme-window-status-current-format}#{@theme-window-status-current-suffix}"
-set -gqF @theme-window-status-format "#{@theme-window-status-prefix}#{@theme-window-status-format}#{@theme-window-status-suffix}"
+set -gqF @theme-status-left "#{@theme-status-left-prefix}#{@theme-status-left-custom}#{@theme-status-left-suffix}"
+set -gqF @theme-status-right "#{@theme-status-right-prefix}#{@theme-status-right-custom}#{@theme-status-right-suffix}"
+set -gqF @theme-window-status-current-format "#{@theme-window-status-current-prefix}#{@theme-window-status-current-format-custom}#{@theme-window-status-current-suffix}"
+set -gqF @theme-window-status-format "#{@theme-window-status-prefix}#{@theme-window-status-format-custom}#{@theme-window-status-suffix}"
 
 # Apply @theme-* options to Tmux
 set -gF  display-panes-active-colour "#{@theme-display-panes-active-colour}"

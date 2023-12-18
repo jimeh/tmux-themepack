@@ -52,10 +52,10 @@ set -goq @theme-window-status-prefix ""
 set -goq @theme-window-status-suffix ""
 
 # Apply prefixes and suffixes to @theme-* format options
-set -gqF @theme-status-left "#{@theme-status-left-prefix}#{@theme-status-left}#{@theme-status-left-suffix}"
-set -gqF @theme-status-right "#{@theme-status-right-prefix}#{@theme-status-right}#{@theme-status-right-suffix}"
-set -gqF @theme-window-status-current-format "#{@theme-window-status-current-prefix}#{@theme-window-status-current-format}#{@theme-window-status-current-suffix}"
-set -gqF @theme-window-status-format "#{@theme-window-status-prefix}#{@theme-window-status-format}#{@theme-window-status-suffix}"
+set -gqF @theme-status-left "#{@theme-status-left-prefix}#{@theme-status-left-custom}#{@theme-status-left-suffix}"
+set -gqF @theme-status-right "#{@theme-status-right-prefix}#{@theme-status-right-custom}#{@theme-status-right-suffix}"
+set -gqF @theme-window-status-current-format "#{@theme-window-status-current-prefix}#{@theme-window-status-current-format-custom}#{@theme-window-status-current-suffix}"
+set -gqF @theme-window-status-format "#{@theme-window-status-prefix}#{@theme-window-status-format-custom}#{@theme-window-status-suffix}"
 
 # Apply @theme-* options to Tmux
 set -gF  display-panes-active-colour "#{@theme-display-panes-active-colour}"
