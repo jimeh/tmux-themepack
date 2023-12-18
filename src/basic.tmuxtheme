@@ -33,11 +33,11 @@ set -goq  @theme-status-bg black
 set -goq  @theme-status-fg cyan
 set -goq  @theme-status-interval 1
 set -goq  @theme-status-justify centre
-set -goqF @theme-status-left "#{@themepack-status-left-area-left-format} #[fg=white]» #[fg=yellow]#{@themepack-status-left-area-middle-format} #[fg=cyan]#{@themepack-status-left-area-right-format}"
+set -goqF @theme-status-left-custom "#{@themepack-status-left-area-left-format} #[fg=white]» #[fg=yellow]#{@themepack-status-left-area-middle-format} #[fg=cyan]#{@themepack-status-left-area-right-format}"
 set -goq  @theme-status-left-bg black
 set -goq  @theme-status-left-fg green
 set -goq  @theme-status-left-length 40
-set -goqF @theme-status-right "#{@themepack-status-right-area-left-format} #[fg=white]« #[fg=yellow]#{@themepack-status-right-area-middle-format} #[fg=green]#{@themepack-status-right-area-right-format}"
+set -goqF @theme-status-right-custom "#{@themepack-status-right-area-left-format} #[fg=white]« #[fg=yellow]#{@themepack-status-right-area-middle-format} #[fg=green]#{@themepack-status-right-area-right-format}"
 set -goq  @theme-status-right-bg black
 set -goq  @theme-status-right-fg cyan
 set -goq  @theme-status-right-length 40
@@ -45,8 +45,8 @@ set -goq  @theme-window-status-activity-bg black
 set -goq  @theme-window-status-activity-fg yellow
 set -goq  @theme-window-status-current-bg red
 set -goq  @theme-window-status-current-fg black
-set -goqF @theme-window-status-current-format " #{@themepack-window-status-current-format} "
-set -goqF @theme-window-status-format " #{@themepack-window-status-format} "
+set -goqF @theme-window-status-current-format-custom " #{@themepack-window-status-current-format} "
+set -goqF @theme-window-status-format-custom " #{@themepack-window-status-format} "
 set -goq  @theme-window-status-separator ""
 
 #= include "_apply"
